@@ -1,10 +1,10 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
         Scanner scanner =  new Scanner(System.in); // Чтение
         Integer command = 0; // Введеный параметр
         StepTrecker ST = new StepTrecker();
+
         while (true){
             printMenu();
             command = scanner.nextInt();
@@ -21,9 +21,15 @@ public class Main {
                 System.out.println("Введите: ");
                 System.out.println("Месяц: ");
                 int month = scanner.nextInt();
+                ST.printDataonMounth(month);
 
             }else if (command==3){
-                System.out.println("3");
+                System.out.println("Введие желаемую цель: ");
+                int stepsTarget = scanner.nextInt();
+                ST.setStepTarget(stepsTarget);
+                System.out.println("Цель измененна.");
+                System.out.println("Новая цель: "+ST.getStepTarget());
+
             }else if (command==4){
                 System.out.println("4");
                 System.out.println("Выход!");
